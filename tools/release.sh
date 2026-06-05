@@ -225,10 +225,6 @@ else
         echo '                0x10000 firmware.bin'
         echo '```'
         echo
-        echo 'First-boot provisioning: join the SoftAP `Tesserae-Setup` (password'
-        echo '`tesserae`) and the captive portal will pop up automatically. Scan the'
-        echo 'QR code on the panel splash or type the SSID and broker details by hand.'
-        echo
         echo "## Checksums"
         echo
         echo '```'
