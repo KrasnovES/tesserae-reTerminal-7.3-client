@@ -347,7 +347,7 @@ static esp_err_t render_form(httpd_req_t *req, const char *error)
 
     /* Status strip: device id + broker + STA IP (or "setup AP" when the
      * captive portal is up and the device has no STA association yet). */
-    char status[512];
+    char status[1024];
     snprintf(status, sizeof status,
         "<div class=\"status\">"
         "<span class=\"k\">Device id</span><span><code>%s</code></span>"
@@ -388,7 +388,7 @@ static esp_err_t render_form(httpd_req_t *req, const char *error)
     snprintf(form_wifi, sizeof form_wifi, k_form_wifi_fmt, e_ssid, picker);
     httpd_resp_sendstr_chunk(req, form_wifi);
 
-    char form_mqtt[1800];
+    char form_mqtt[4096];
     snprintf(form_mqtt, sizeof form_mqtt, k_form_mqtt_fmt, e_uri, e_devid, e_user);
     httpd_resp_sendstr_chunk(req, form_mqtt);
 
