@@ -37,8 +37,8 @@ static const char *wake_reason_str(esp_reset_reason_t r) {
         case ESP_RST_DEEPSLEEP: return "timer";
         case ESP_RST_BROWNOUT:  return "brownout";
         case ESP_RST_SDIO:      return "sdio";
-        case ESP_RST_USB:       return "usb";
-        case ESP_RST_JTAG:      return "jtag";
+//        case ESP_RST_USB:       return "usb";
+//        case ESP_RST_JTAG:      return "jtag";
         default:                return "unknown";
     }
 }
