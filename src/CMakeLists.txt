@@ -1,16 +1,16 @@
 idf_component_register(
     SRCS
-        "main.c"
-        "epd_driver.c"
-        "heartbeat.c"
-        "image_decoder.c"
-        "image_fetcher.c"
-        "mqtt_config.c"
-        "mqtt_handler.c"
-        "pmic.c"
-        "provisioning.c"
-        "splash.c"
-        "wifi_manager.c"
+        main.c
+        epd_driver.c
+        heartbeat.c
+        image_decoder.c
+        image_fetcher.c
+        mqtt_config.c
+        mqtt_handler.c
+        pmic.c
+        provisioning.c
+        splash.c
+        wifi_manager.c
     INCLUDE_DIRS
         "."
         "../include"
@@ -19,8 +19,6 @@ idf_component_register(
         "../assets/splash_portal.bin"
     REQUIRES
         driver
-        i2c
-        usb
         esp_event
         esp_http_client
         esp_http_server
