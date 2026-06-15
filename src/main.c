@@ -82,7 +82,7 @@ static void button_watch_task(void *arg) {
     gpio_config_t in = {
         .intr_type    = GPIO_INTR_DISABLE,
         .mode         = GPIO_MODE_INPUT,
-        .pin_bit_mask = (1ULL << BTN_PIN_BOOT),
+        .pin_bit_mask = (1ULL << BTN_PIN_GREEN),
         .pull_up_en   = GPIO_PULLUP_ENABLE,
         .pull_down_en = GPIO_PULLDOWN_DISABLE,
     };
@@ -94,14 +94,14 @@ static void button_watch_task(void *arg) {
      * masquerade as a permanent press and lock the device into settings
      * mode on every boot). Expected: 1 (HIGH, pulled up, not pressed). */
     ESP_LOGI(TAG, "BOOT (GPIO%d) resting level=%d  (expect 1 = released)",
-             BTN_PIN_BOOT, gpio_get_level(BTN_PIN_BOOT));
+             BTN_PIN_GREEN, gpio_get_level(BTN_PIN_GREEN));
 
     bool pressed = false;
     bool hold_logged = false;
     int64_t press_start_us = 0;
 
     while (1) {
-        bool now = (gpio_get_level(BTN_PIN_BOOT) == 0);
+        bool now = (gpio_get_level(BTN_PIN_GREEN) == 0);
         int64_t t = esp_timer_get_time();
 
         if (now && !pressed) {
