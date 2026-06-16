@@ -8,7 +8,7 @@
 #include "esp_log.h"
 #include "esp_rom_sys.h"     /* esp_rom_delay_us */
 #include "driver/gpio.h"
-#include "driver/i2c.h"
+#include "driver/i2c_master.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
