@@ -158,8 +158,8 @@ static void on_event(void *arg, esp_event_base_t base, int32_t id, void *data)
     case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "connected; subscribing to %s + %s",
                  ctx->update_topic, ctx->config_topic);
-        esp_mqtt_client_subscribe(e->client, ctx->update_topic, 1);
-        esp_mqtt_client_subscribe(e->client, ctx->config_topic, 1);
+        esp_mqtt_client_subscribe(e->client, ctx->update_topic, 1,0);
+        esp_mqtt_client_subscribe(e->client, ctx->config_topic, 1,0);
         break;
 
     case MQTT_EVENT_DATA:
